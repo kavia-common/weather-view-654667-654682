@@ -1,82 +1,37 @@
-# Lightweight React Template for KAVIA
+# Weather Viewer Frontend
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A modern React UI for viewing current weather and forecasts.
 
 ## Features
+- Ocean Professional theme (Primary: #2563EB, Secondary: #F59E0B, Background: #f9fafb, Text: #111827)
+- Header with app title and location search
+- Current weather details card
+- Forecast list as responsive cards
+- Footer with credits
+- Mock-ready weather API service (switches to real API when env vars are set)
+- Clean component structure
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+## Project Structure
+- src/theme.css — Theme and layout styles
+- src/services/weatherService.js — API integration (mock by default)
+- src/components/Header.js — Header with search
+- src/components/WeatherDetails.js — Current weather card
+- src/components/ForecastList.js — Forecast cards
+- src/components/Footer.js — Footer credits
+- src/App.js — Application container and data orchestration
 
-## Getting Started
+## Environment Variables
+Copy `.env.example` to `.env` and set values when using a real API:
+- REACT_APP_WEATHER_API_URL
+- REACT_APP_WEATHER_API_KEY
 
-In the project directory, you can run:
+If these are not set, the app uses built-in mock data.
 
-### `npm start`
+## Scripts
+- npm start — Start dev server
+- npm test — Run tests
+- npm run build — Build production bundle
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-### `npm test`
-
-Launches the test runner in interactive watch mode.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notes
+- Do not hardcode API keys in the codebase. Use environment variables.
+- The weatherService includes mapping helpers for future API payloads.
